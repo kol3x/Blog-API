@@ -1,0 +1,51 @@
+.commentsBox {
+  font-size: 20px;
+  background-color: whitesmoke;
+  color:black;
+}
+
+.allComments {
+  display: grid;
+} 
+
+.eachComment{
+  display: grid;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 20px;
+}
+
+.commentAuthor {
+  justify-self: start;
+  margin-left: 30px;
+  margin-bottom: 0px;
+}
+
+.commentText {
+  justify-self: start;
+  background-color: rgb(225, 241, 255);
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid blue;
+}
+
+.commentTime {
+  justify-self: end;
+  margin-right: 30px;
+  font-size: 15px;
+}
+
+.singlePostContent {
+  display: grid;
+}
+
+.postText {
+  white-space: pre-line;
+  max-width: 1024px;
+  place-self: center;
+  background-color: rgba(255, 255, 255, 0.851);
+  font-size: 20px;
+  color: black;
+  padding: 20px
+}
