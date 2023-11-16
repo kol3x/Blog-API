@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./singlePost.css";
 
-function Comments({ postid, update }) {
+function Comments({ postid, update, setUpdate }) {
   const [comments, setComments] = useState(undefined);
 
   useEffect(() => {
@@ -24,6 +24,25 @@ function Comments({ postid, update }) {
               <h4 className="commentAuthor">by: {comment.username}</h4>
               <p className="commentText">{comment.text}</p>
               <p className="commentTime"> {comment.date}</p>
+              <form onSubmit={async (e) => {
+                  e.preventDefault();
+                  await fetch(
+                    `http://localhost:5005/posts/${postid}/comments/${comment._id}/delete`,
+                    {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      credentials: "include",
+                      body: JSON.stringify({
+                        commentid: e.target.commentDelete.value,
+                      }),
+                    }
+                  );
+                  setUpdate((v) => v + 1);
+                }}>
+                <label htmlFor="commentDelete">Delete comment</label>
+                <input hidden name="commentDelete" value={comment._id} readOnly/>
+                <button type="submit">Delete</button>
+              </form>
             </div>
           ))}
       </div>

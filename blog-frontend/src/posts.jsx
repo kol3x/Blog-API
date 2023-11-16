@@ -1,8 +1,5 @@
 import useFetch from "react-fetch-hook";
-import Comments from "./comments";
 import { Link } from "react-router-dom";
-import SinglePost from "./singlePost";
-// import "./posts.css";
 
 function Posts() {
   const { data: posts, error } = useFetch("http://localhost:5005/posts");

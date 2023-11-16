@@ -1,0 +1,22 @@
+.newPost {
+  background-color: bisque;
+  color: black;
+  display: grid;
+  grid-row: 1fr 1fr 1fr;
+  grid-column: 1fr;
+  font-size: 18px;
+  gap: 5px;
+  align-self: center;
+  padding: 40px;
+  width: 70vw;
+}
+
+textarea {
+  border: none;
+  width: 100%;
+  margin: 8px 0;
+  background-color: #f8f8f8;
+  color: black;
+  font-size: 20px;
+  place-self: center;
+}
