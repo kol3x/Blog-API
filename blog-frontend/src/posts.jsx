@@ -9,12 +9,12 @@ function Posts() {
       {error && (
         <div>{`There is a problem fetching the blog data - ${error}`}</div>
       )}
-      <div>
+      <div className="allPosts">
         {posts &&
           posts
             .filter((post) => post.isVisible)
             .map((post) => (
-              <div key={post._id}>
+              <div key={post._id} className="eachPost">
                 <Link to={`/${post._id}`}>
                   <h2>{post.title}</h2>
                 </Link>

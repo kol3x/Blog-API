@@ -12,11 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  background-image: url('./imgs/bg.png'), url('./imgs/bg2.png');
+  background-image: url("./imgs/bg.png"), url("./imgs/bg2.png");
   background-size: 45vw;
   background-repeat: no-repeat;
   background-position: left 20px, right 20px;
-
 }
 
 a {
@@ -35,4 +34,14 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.eachPost {
+  background-color: rgba(59, 59, 59, 0.211);
+  border-radius: 10px;
+  transition: 0.4s;
+}
+
+.eachPost:hover {
+  background-color: #434040;
 }
