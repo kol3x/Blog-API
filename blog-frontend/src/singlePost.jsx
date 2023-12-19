@@ -30,7 +30,7 @@ function SinglePost() {
               onSubmit={async (e) => {
                 e.preventDefault();
                 await fetch(
-                  `${SERVER_URL}/${postId}/new-comment`,
+                  `${SERVER_URL}/posts/${postId}/new-comment`,
                   {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
