@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./singlePost.css";
 
+const SERVER_URL = process.env.SERVER_URL;
+
 function Comments({ postid, update }) {
   const [comments, setComments] = useState(undefined);
 
   useEffect(() => {
-    const url = `http://localhost:5005/posts/${postid}/comments`;
+    const url = `${SERVER_URL}/posts/${postid}/comments`;
 
     const fetchData = async () => {
       const response = await fetch(url);

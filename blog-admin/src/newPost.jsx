@@ -1,12 +1,15 @@
 import "./newPost.css";
 
+
+const SERVER_URL = process.env.SERVER_URL;
+
 function NewPost() {
   return (
     <form
       className="newPost"
       onSubmit={async (e) => {
         e.preventDefault();
-        await fetch(`http://localhost:5005/posts/add-post`, {
+        await fetch(`${SERVER_URL}/posts/add-post`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           credentials: "include",

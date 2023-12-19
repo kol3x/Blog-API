@@ -4,12 +4,12 @@ import { useParams, Link } from "react-router-dom";
 import "./singlePost.css";
 import React, { useState } from "react";
 
+const SERVER_URL = process.env.SERVER_URL;
+
 function SinglePost() {
   const [update, setUpdate] = useState(0);
   const { postId } = useParams();
-  const { data: post, error } = useFetch(
-    `http://localhost:5005/posts/${postId}`
-  );
+  const { data: post, error } = useFetch(`${SERVER_URL}/${postId}`);
 
   return (
     <div>
@@ -30,7 +30,7 @@ function SinglePost() {
               onSubmit={async (e) => {
                 e.preventDefault();
                 await fetch(
-                  `http://localhost:5005/posts/${postId}/new-comment`,
+                  `${SERVER_URL}/${postId}/new-comment`,
                   {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },

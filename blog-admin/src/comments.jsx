@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import "./singlePost.css";
 
+
+const SERVER_URL = process.env.SERVER_URL;
+
 function Comments({ postid, update, setUpdate }) {
   const [comments, setComments] = useState(undefined);
 
   useEffect(() => {
-    const url = `http://localhost:5005/posts/${postid}/comments`;
+    const url = `${SERVER_URL}/posts/${postid}/comments`;
 
     const fetchData = async () => {
       const response = await fetch(url);
@@ -27,7 +30,7 @@ function Comments({ postid, update, setUpdate }) {
               <form onSubmit={async (e) => {
                   e.preventDefault();
                   await fetch(
-                    `http://localhost:5005/posts/${postid}/comments/${comment._id}/delete`,
+                    `${SERVER_URL}/${postid}/comments/${comment._id}/delete`,
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },

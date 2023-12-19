@@ -2,12 +2,14 @@ import useFetch from "react-fetch-hook";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+const SERVER_URL = process.env.SERVER_URL;
+
 function Posts() {
   const [update, setUpdate] = useState(0);
   const [posts, setPosts] = useState(undefined);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5005/posts");
+      const response = await fetch("${SERVER_URL}/posts");
       const posts = await response.json();
       setPosts(posts);
     };
@@ -35,7 +37,7 @@ function Posts() {
                 onSubmit={async (e) => {
                   e.preventDefault();
                   await fetch(
-                    `http://localhost:5005/posts/${post._id}/toggle`,
+                    `${SERVER_URL}/${post._id}/toggle`,
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
@@ -57,7 +59,7 @@ function Posts() {
                   e.preventDefault();
                   try {
                     await fetch(
-                      `http://localhost:5005/posts/${post._id}/delete`,
+                      `${SERVER_URL}/${post._id}/delete`,
                       {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },

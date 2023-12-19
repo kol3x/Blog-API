@@ -1,8 +1,10 @@
 import useFetch from "react-fetch-hook";
 import { Link } from "react-router-dom";
 
+const SERVER_URL = process.env.SERVER_URL;
+
 function Posts() {
-  const { data: posts, error } = useFetch("http://localhost:5005/posts");
+  const { data: posts, error } = useFetch(`${SERVER_URL}/posts`);
   return (
     <div>
       <h1>Blog Posts</h1>

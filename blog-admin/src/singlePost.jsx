@@ -4,11 +4,13 @@ import { useParams, Link } from "react-router-dom";
 import "./singlePost.css";
 import React, { useState } from "react";
 
+const SERVER_URL = process.env.SERVER_URL;
+
 function SinglePost() {
   const [update, setUpdate] = useState(0);
   const { postId } = useParams();
   const { data: post, error } = useFetch(
-    `http://localhost:5005/posts/${postId}`
+    `${SERVER_URL}/${postId}`
   );
 
   return (
