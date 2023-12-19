@@ -8,7 +8,7 @@ const bcrypt = require("bcryptjs");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
-const { URI, PORT, SECRET_ACCESS_TOKEN } = require("./config/index");
+const { URI, PORT, FRONTEND } = require("./config/index");
 const User = require("./models/user");
 
 const indexRouter = require("./routes/index");
@@ -23,7 +23,7 @@ db.on("error", console.error.bind(console, "mongo connection error"));
 app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:5175"],
+  origin: FRONTEND,
   credentials: true,
 };
 

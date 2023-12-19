@@ -1,6 +1,6 @@
 const dotenv = require("dotenv");
 dotenv.config();
 
-const { URI, PORT, SECRET_ACCESS_TOKEN } = process.env;
+const { URI, PORT, FRONTEND } = process.env;
 
-module.exports = { URI, PORT, SECRET_ACCESS_TOKEN };
+module.exports = { URI, PORT, FRONTEND };
