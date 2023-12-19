@@ -20,7 +20,7 @@ mongoose.connect(mongoDb);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "mongo connection error"));
 
-app = express();
+const app = express();
 
 const corsOptions = {
   origin: FRONTEND,
