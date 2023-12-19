@@ -9,7 +9,7 @@ const SERVER_URL = process.env.SERVER_URL;
 function SinglePost() {
   const [update, setUpdate] = useState(0);
   const { postId } = useParams();
-  const { data: post, error } = useFetch(`${SERVER_URL}/${postId}`);
+  const { data: post, error } = useFetch(`${SERVER_URL}/posts/${postId}`);
 
   return (
     <div>
