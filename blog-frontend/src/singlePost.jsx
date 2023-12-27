@@ -61,7 +61,7 @@ function SinglePost() {
                   name="text"
                 />
               </div>
-              <button type="submit">ADD A COMMENT</button>
+              <button type="submit">COMMENT</button>
             </form>
           </div>
         )}
