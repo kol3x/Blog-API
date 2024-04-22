@@ -1,5 +1,10 @@
 .singlePostContent {
   display: grid;
+  max-width: 720px;
+}
+
+.singlePostTitle {
+  padding-top: 30px;
 }
 
 .postText {

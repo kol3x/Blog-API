@@ -7,7 +7,6 @@ function Posts() {
   const { data: posts, error } = useFetch(`${SERVER_URL}/posts`);
   return (
     <div>
-      <h1>Blog Posts</h1>
       {error && (
         <div>{`There is a problem fetching the blog data - ${error}`}</div>
       )}
@@ -18,7 +17,7 @@ function Posts() {
             .map((post) => (
               <div key={post._id} className="eachPost">
                 <Link to={`/${post._id}`}>
-                  <h2>{post.title}</h2>
+                  <h2 className="homePostTitle">{post.title}</h2>
                 </Link>
                 <p>{post.date}</p>
               </div>

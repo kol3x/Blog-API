@@ -5,7 +5,7 @@
   font-size: 18px;
   gap: 5px;
   align-self: center;
-  padding: 20px;
+  padding-bottom: 40px;
 }
 
 input {
@@ -14,8 +14,6 @@ input {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  background-color: #f8f8f8;
-  color: black;
   font-size: 20px;
 }
 
@@ -24,49 +22,39 @@ textarea {
   height: 150px;
   padding: 12px 20px;
   box-sizing: border-box;
-  border: 2px solid #ccc;
   border-radius: 4px;
   resize: none;
-  background-color: #f8f8f8;
-  color: black;
   font-size: 20px;
 }
 
 .newCommentUserDiv,
 .newCommentTextDiv {
-  padding: 30px;
+  padding-bottom: 30px;
   display: grid;
 }
 
 .newCommentTextDiv > label,
 .newCommentUserDiv > label {
   place-self: start;
-  margin-left: 10px;
-  margin-bottom: 3px;
+  margin-bottom: 10px;
   font-style: oblique;
   font-size: 110%;
 }
 
-button {
+.sendCommentBtn {
   color: black;
   background-color: #00bf63;
   border: none;
-  height: 30px;
+  height: 40px;
   letter-spacing: 15px;
   font-style: oblique;
   font-size: 80%;
-  width: 50%;
+  width: 100%;
   justify-self: center;
 }
 
-button:hover {
+.sendCommentBtn:hover {
   background-color: #c8ffe5;
-}
-
-textarea:focus,
-input:focus {
-  color: black;
-  font-size: 20px;
 }
 
 .commentsBox {
@@ -81,7 +69,7 @@ input:focus {
 .eachComment {
   display: grid;
   border: 2px solid #00bf63;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .commentAuthor {
@@ -94,7 +82,7 @@ input:focus {
   justify-self: start;
   margin-left: 50px;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 10px;
   border: 1px solid #00bf63;
 }
 

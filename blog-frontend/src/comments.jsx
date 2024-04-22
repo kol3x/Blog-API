@@ -3,7 +3,7 @@ import "./comments.css";
 
 const SERVER_URL = process.env.SERVER_URL;
 
-function Comments({ postid, user, text }) {
+function Comments({ postid, update }) {
   const [comments, setComments] = useState(undefined);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function Comments({ postid, user, text }) {
       setComments(comments);
     };
     fetchData();
-  }, [user, text, postid]);
+  }, [update, postid]);
   return (
     <div className="commentsBox">
       {comments && comments.length > 0 && <h3>Comments</h3>}

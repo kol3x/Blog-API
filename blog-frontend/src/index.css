@@ -12,17 +12,24 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   background-image: url("./imgs/bg.png"), url("./imgs/bg2.png");
-  background-size: 45vw;
+  background-size: 33vw;
   background-repeat: no-repeat;
   background-position: left 20px, right 20px;
 }
 
 a {
+  color: inherit;
+}
+
+a:hover {
+  color: rgb(47, 47, 255);
+}
+
+.eachPost > a {
   font-weight: 500;
   color: #00bf63;
   text-decoration: inherit;
 }
-
 
 body {
   margin: 0;
@@ -34,12 +41,30 @@ h1 {
   line-height: 1.1;
 }
 
+h2:not(.homePostTitle) {
+  color: white;
+  margin-top: 50px;
+  font-size: 1em;
+  font-style: italic;
+}
+
+.allPosts {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 720px;
+}
+
 .eachPost {
   background-color: rgba(59, 59, 59, 0.211);
   border-radius: 10px;
-  transition: 0.4s;
+  transition: 0.2s;
+  padding: 10px;
 }
 
 .eachPost:hover {
   background-color: #434040;
+}
+
+.menuBar {
+  width: 100%;
 }

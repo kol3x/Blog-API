@@ -1,6 +1,6 @@
 import useFetch from "react-fetch-hook";
 import Comments from "./comments";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./singlePost.css";
 import React, { useState } from "react";
 import DOMPurify from "dompurify";
@@ -8,6 +8,7 @@ import DOMPurify from "dompurify";
 const SERVER_URL = process.env.SERVER_URL;
 
 function SinglePost() {
+  const [updateComments, setUpdate] = useState(0);
   const [commentUsername, setCommentUsername] = useState("");
   const [commentText, setCommentText] = useState("");
   const { postId } = useParams();
@@ -15,16 +16,13 @@ function SinglePost() {
 
   return (
     <div>
-      <Link to={`/`}>
-        <h2>Home</h2>
-      </Link>
       {error && (
         <div>{`There is a problem fetching the post data - ${error}`}</div>
       )}
       <div>
         {post && (
           <div className="singlePostContent">
-            <h1>{post.title}</h1>
+            <h1 className="singlePostTitle">{post.title}</h1>
             <p
               className="postText"
               dangerouslySetInnerHTML={{
@@ -32,11 +30,7 @@ function SinglePost() {
               }}
             />
             <p>{post.date}</p>
-            <Comments
-              postid={post._id}
-              username={commentUsername}
-              text={commentText}
-            />
+            <Comments postid={post._id} update={updateComments} />
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
@@ -49,6 +43,8 @@ function SinglePost() {
                   }),
                 });
                 setUpdate((v) => v + 1);
+                setCommentText("");
+                setCommentUsername("");
               }}
               className="newComment"
             >
@@ -75,7 +71,9 @@ function SinglePost() {
                   }}
                 />
               </div>
-              <button type="submit">SEND</button>
+              <button className="sendCommentBtn" type="submit">
+                SEND
+              </button>
             </form>
           </div>
         )}
