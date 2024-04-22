@@ -1,8 +1,8 @@
 import "./App.css";
 import Posts from "./posts";
 import SinglePost from "./singlePost";
-import Comments from "./comments";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router}/>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;

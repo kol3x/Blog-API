@@ -3,11 +3,13 @@ import Comments from "./comments";
 import { useParams, Link } from "react-router-dom";
 import "./singlePost.css";
 import React, { useState } from "react";
+import DOMPurify from "dompurify";
 
 const SERVER_URL = process.env.SERVER_URL;
 
 function SinglePost() {
-  const [update, setUpdate] = useState(0);
+  const [commentUsername, setCommentUsername] = useState("");
+  const [commentText, setCommentText] = useState("");
   const { postId } = useParams();
   const { data: post, error } = useFetch(`${SERVER_URL}/posts/${postId}`);
 
@@ -23,23 +25,29 @@ function SinglePost() {
         {post && (
           <div className="singlePostContent">
             <h1>{post.title}</h1>
-            <p className="postText">{post.text}</p>
+            <p
+              className="postText"
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(post.text),
+              }}
+            />
             <p>{post.date}</p>
-            <Comments update={update} postid={post._id} />
+            <Comments
+              postid={post._id}
+              username={commentUsername}
+              text={commentText}
+            />
             <form
               onSubmit={async (e) => {
                 e.preventDefault();
-                await fetch(
-                  `${SERVER_URL}/posts/${postId}/new-comment`,
-                  {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                      username: e.target.username.value,
-                      text: e.target.text.value,
-                    }),
-                  }
-                );
+                await fetch(`${SERVER_URL}/posts/${postId}/new-comment`, {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    username: commentUsername,
+                    text: commentText,
+                  }),
+                });
                 setUpdate((v) => v + 1);
               }}
               className="newComment"
@@ -51,6 +59,9 @@ function SinglePost() {
                   className="newCommentUserInput"
                   type="text"
                   name="username"
+                  onChange={(e) => {
+                    setCommentUsername(e.target.value);
+                  }}
                 />
               </div>
               <div className="newCommentTextDiv">
@@ -59,6 +70,9 @@ function SinglePost() {
                   className="newCommentTextInput"
                   type="text"
                   name="text"
+                  onChange={(e) => {
+                    setCommentText(e.target.value);
+                  }}
                 />
               </div>
               <button type="submit">SEND</button>

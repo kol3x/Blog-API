@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import "./singlePost.css";
+import "./comments.css";
 
 const SERVER_URL = process.env.SERVER_URL;
 
-function Comments({ postid, update }) {
+function Comments({ postid, user, text }) {
   const [comments, setComments] = useState(undefined);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function Comments({ postid, update }) {
       setComments(comments);
     };
     fetchData();
-  }, [update, postid]);
+  }, [user, text, postid]);
   return (
     <div className="commentsBox">
       {comments && comments.length > 0 && <h3>Comments</h3>}
