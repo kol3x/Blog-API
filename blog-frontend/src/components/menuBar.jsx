@@ -36,7 +36,7 @@ export default function MenuBar() {
             </Button>
           </Box>
           <Button className="barSpacer" disabled sx={{ flexGrow: 1 }}></Button>
-          <Box sx={{ justifySelf: "end", display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr", gridColumn: 3}}>
+          <Box sx={{ justifySelf: "end", display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr", gridColumn: 3, gap: 2}}>
             <Tooltip title="My GitHub profile">
               <IconButton
                 href="https://github.com/kol3x"
@@ -45,7 +45,6 @@ export default function MenuBar() {
                 edge="start"
                 color="inherit"
                 aria-label="My GitHub profile"
-                sx={{ mr: 2, ml: 2 }}
               >
                 <GithubIcon />
               </IconButton>
@@ -58,7 +57,6 @@ export default function MenuBar() {
                 edge="start"
                 color="inherit"
                 aria-label="My LinkedIn profile"
-                sx={{ mr: 2 }}
               >
                 <LinkedinIcon />
               </IconButton>
@@ -71,7 +69,6 @@ export default function MenuBar() {
                 edge="start"
                 color="inherit"
                 aria-label="My CV"
-                sx={{ mr: 2 }}
               >
                 <CVIcon />
               </IconButton>

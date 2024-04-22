@@ -21,7 +21,6 @@ const EmailIconButton = () => {
         edge="start"
         color="inherit"
         aria-label={`Email me at ${"kolaegipet@gmail.com"}, click to copy`}
-        sx={{ mr: 2 }}
         onClick={handleCopyEmail}
       >
         <EmailIcon />
