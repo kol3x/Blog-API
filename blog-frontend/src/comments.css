@@ -91,3 +91,9 @@ textarea {
   margin-right: 30px;
   font-size: 15px;
 }
+
+@media (max-width: 700px) {
+  .commentText {
+    font-size: 18px;
+  }
+}

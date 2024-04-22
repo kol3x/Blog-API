@@ -20,14 +20,15 @@ export default function MenuBar() {
         position="static"
       >
         <Toolbar>
-          <Box>
+          <Box sx={{ display: "flex", flexWrap: "wrap"}}>
             <Link to={`/`}>
-              <Button color="inherit" href="/">
+              <Button className="menuBtn" color="inherit" href="/">
                 Home
               </Button>
             </Link>
 
             <Button
+              className="menuBtn"
               color="inherit"
               href="https://zingy-griffin-616d20.netlify.app/"
             >

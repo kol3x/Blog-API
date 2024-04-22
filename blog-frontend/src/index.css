@@ -68,3 +68,18 @@ h2:not(.homePostTitle) {
 .menuBar {
   width: 100%;
 }
+
+a.menuBtn {
+  padding: 0;
+  text-align: start!important;
+}
+
+@media (max-width: 700px) {
+  .barSpacer{
+    display: none!important;
+  }
+  .allPosts {
+    width: auto;
+    padding: 15px;
+  }
+}
