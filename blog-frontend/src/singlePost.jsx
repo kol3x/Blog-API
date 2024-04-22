@@ -55,6 +55,7 @@ function SinglePost() {
                   className="newCommentUserInput"
                   type="text"
                   name="username"
+                  value={commentUsername}
                   onChange={(e) => {
                     setCommentUsername(e.target.value);
                   }}
@@ -66,6 +67,7 @@ function SinglePost() {
                   className="newCommentTextInput"
                   type="text"
                   name="text"
+                  value={commentText}
                   onChange={(e) => {
                     setCommentText(e.target.value);
                   }}
