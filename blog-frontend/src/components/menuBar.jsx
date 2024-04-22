@@ -19,8 +19,8 @@ export default function MenuBar() {
         sx={{ backgroundColor: "black", borderBottom: "1px solid #00bf63" }}
         position="static"
       >
-        <Toolbar>
-          <Box sx={{ display: "flex", flexWrap: "wrap"}}>
+        <Toolbar sx={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr"}}>
+          <Box sx={{ display: "flex", flexWrap: "wrap" }}>
             <Link to={`/`}>
               <Button className="menuBtn" color="inherit" href="/">
                 Home
@@ -36,58 +36,60 @@ export default function MenuBar() {
             </Button>
           </Box>
           <Button className="barSpacer" disabled sx={{ flexGrow: 1 }}></Button>
-          <Tooltip title="My GitHub profile">
-            <IconButton
-              href="https://github.com/kol3x"
-              target="_blank"
-              size="medium"
-              edge="start"
-              color="inherit"
-              aria-label="My GitHub profile"
-              sx={{ mr: 2, ml: 2 }}
-            >
-              <GithubIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="My LinkedIn profile">
-            <IconButton
-              href="https://www.linkedin.com/in/nikolai-shcherbinin/"
-              target="_blank"
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="My LinkedIn profile"
-              sx={{ mr: 2 }}
-            >
-              <LinkedinIcon />
-            </IconButton>
-          </Tooltip>
-          <Tooltip title="My CV">
-            <IconButton
-              href="https://drive.google.com/file/d/1gaqd7i2KO8-nE08UuTJ8ZU_mSQZEC39E/"
-              target="_blank"
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="My CV"
-              sx={{ mr: 2 }}
-            >
-              <CVIcon />
-            </IconButton>
-          </Tooltip>
-          <EmailIconButton />
-          <Tooltip title="LeetCode profile">
-            <IconButton
-              href="https://leetcode.com/kol3x/"
-              target="_blank"
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="LeetCode profile"
-            >
-              <LeetcodeIcon />
-            </IconButton>
-          </Tooltip>
+          <Box sx={{ justifySelf: "end", display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr", gridColumn: 3}}>
+            <Tooltip title="My GitHub profile">
+              <IconButton
+                href="https://github.com/kol3x"
+                target="_blank"
+                size="medium"
+                edge="start"
+                color="inherit"
+                aria-label="My GitHub profile"
+                sx={{ mr: 2, ml: 2 }}
+              >
+                <GithubIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="My LinkedIn profile">
+              <IconButton
+                href="https://www.linkedin.com/in/nikolai-shcherbinin/"
+                target="_blank"
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="My LinkedIn profile"
+                sx={{ mr: 2 }}
+              >
+                <LinkedinIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="My CV">
+              <IconButton
+                href="https://drive.google.com/file/d/1gaqd7i2KO8-nE08UuTJ8ZU_mSQZEC39E/"
+                target="_blank"
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="My CV"
+                sx={{ mr: 2 }}
+              >
+                <CVIcon />
+              </IconButton>
+            </Tooltip>
+            <EmailIconButton />
+            <Tooltip title="LeetCode profile">
+              <IconButton
+                href="https://leetcode.com/kol3x/"
+                target="_blank"
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="LeetCode profile"
+              >
+                <LeetcodeIcon />
+              </IconButton>
+            </Tooltip>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>
