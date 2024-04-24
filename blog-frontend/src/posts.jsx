@@ -14,6 +14,7 @@ function Posts() {
         {posts &&
           posts
             .filter((post) => post.isVisible)
+            .reverse()
             .map((post) => (
               <div key={post._id} className="eachPost">
                 <Link to={`/${post._id}`}>
