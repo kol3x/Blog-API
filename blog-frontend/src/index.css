@@ -25,10 +25,11 @@ a:hover {
   color: rgb(47, 47, 255);
 }
 
-.eachPost > a {
+
+a:has(.eachPost) {
   font-weight: 500;
   color: #00bf63;
-  text-decoration: inherit;
+  text-decoration: none;
 }
 
 body {
@@ -52,9 +53,13 @@ h2:not(.homePostTitle) {
   margin-top: 40px;
   margin-bottom: 40px;
   width: 720px;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .eachPost {
+  min-height: 130px;
   background-color: rgba(59, 59, 59, 0.211);
   border-radius: 10px;
   transition: 0.2s;

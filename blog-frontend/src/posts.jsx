@@ -16,12 +16,13 @@ function Posts() {
             .filter((post) => post.isVisible)
             .reverse()
             .map((post) => (
-              <div key={post._id} className="eachPost">
-                <Link to={`/${post._id}`}>
+              <Link to={`/${post._id}`}>
+                <div key={post._id} className="eachPost">
                   <h2 className="homePostTitle">{post.title}</h2>
-                </Link>
-                <p>{post.date}</p>
-              </div>
+
+                  <p>{post.date}</p>
+                </div>
+              </Link>
             ))}
       </div>
     </div>
