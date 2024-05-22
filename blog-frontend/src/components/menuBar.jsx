@@ -24,7 +24,7 @@ export default function MenuBar() {
             <Button
               className="menuBtn"
               color="inherit"
-              href="https://zingy-griffin-616d20.netlify.app/"
+              href="https://kol3x.com/"
             >
               Portfolio
             </Button>
